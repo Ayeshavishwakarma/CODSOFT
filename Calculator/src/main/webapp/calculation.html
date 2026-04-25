@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .input-field {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .input-field input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .operation {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+        }
+        .operation label {
+            margin-bottom: 5px;
+        }
+        .operation input[type="radio"] {
+            display: none; /* Hide the default radio button */
+        }
+        .operation label.button {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #007BFF;
+            border-radius: 50px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .operation input[type="radio"]:checked + label.button {
+            background-color: #0056b3;
+        }
+        .operation label.button:hover {
+            background-color: #0056b3;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <form action="cal" method="post">
+            <div class="input-field">
+                <input type="text" name="num1" placeholder="Enter 1st number" required>
+            </div>
+            <div class="input-field">
+                <input type="text" name="num2" placeholder="Enter 2nd number" required>
+            </div>
+
+            <div class="operation">
+                <label>Choose an operation:</label>
+                <input type="radio" name="choice" value="add" id="add" required>
+                <label class="button" for="add">+</label>
+
+                <input type="radio" name="choice" value="sub" id="sub">
+                <label class="button" for="sub">Subtract</label>
+
+                <input type="radio" name="choice" value="multi" id="multi">
+                <label class="button" for="multi">Multiply</label>
+
+                <input type="radio" name="choice" value="div" id="div">
+                <label class="button" for="div">Divide</label>
+
+                <input type="radio" name="choice" value="greater" id="greater">
+                <label class="button" for="greater">Greater</label>
+
+                <input type="radio" name="choice" value="smaller" id="smaller">
+                <label class="button" for="smaller">Smaller</label>
+            </div>
+
+            <input type="submit" value="Calculate">
+        </form>
+    </div>
+</body>
+</html>
